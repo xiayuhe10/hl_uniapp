@@ -1,13 +1,15 @@
 <template>
 	<view>
+		<view>
 
+	</view>
 	</view>
 </template>
 
 <script>
 	import permision from "@/js_sdk/wa-permission/permission.js"
 	export default {
-		data() {
+		data() { 
 			return {
 
 			}
