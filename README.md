@@ -2,6 +2,7 @@
 
 #### 介绍
 APP基础架构，uniapp
+整合了colorUI组件，直接可通过colorUI进行页面布局
 
 #### 软件架构
 ##### 1、修改连接后端接口：common/config.js
