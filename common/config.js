@@ -23,10 +23,10 @@ if (NODE_ENV === "dev") {
 		//生产环境
 		console.log('正式环境')
 		configURL = {
-			BaseURL: 'https://service.zgy007.com',
-			webscoket: 'wss://socket.zgy007.com',
-			fileURL: "https://demo.file.zgy007.com",
-			h5URL: "http://h5.zgy007.com:99",
+			BaseURL: '',
+			webscoket: '',
+			fileURL: "",
+			h5URL: "",
 		}
 	} else if (NODE_ENV === 'hl') {
 		//生产环境
@@ -42,10 +42,10 @@ if (NODE_ENV === "dev") {
 		//新正式环境
 		console.log('新正式环境')
 		configURL = {
-			BaseURL: 'http://111.12.70.151:8080', // 19 46
-			webscoket: 'ws://111.12.70.151:20000',
-			fileURL: "http://111.12.70.151:8888",
-			h5URL: "http://192.168.2.168:99"
+			BaseURL: '', // 19 46
+			webscoket: '',
+			fileURL: "",
+			h5URL: ""
 		}
 	}
 
