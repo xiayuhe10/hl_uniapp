@@ -4,27 +4,25 @@
 APP基础架构，uniapp
 
 #### 软件架构
-软件架构说明
+##### 1、修改连接后端接口：common/config.js
+##### 2、后端API接口存放：common/api.js
+##### 3、枚举状态等：common/enums/status.js
+##### 枚举直接根据后端返回进行引入展现
+##### 页面调用：
+	<view class="text-content text-left">
+								<view :class="'text-'+STATUS[item.status].col">{{STATUS[item.status].NAME}}</view>
+	</view>
+ <script>
+	import status from '@/common/enums/status.js';
+	export default {
+		data() {
+			return {
+				STATUS:status.checkStatus,
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+		}
+		},
+     .....
+ </script>
 
 
 #### 特技
