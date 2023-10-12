@@ -27,7 +27,7 @@
 			</swiper>
 		</view>
 		<view class="address-text">
-			<view>公司地址：南宁市青秀区佛子岭路28号霖峰壹號2组团7栋2单元5楼</view>
+			<view>公司地址：XXXX</view>
 		</view>
 		<view class="padding-lg"></view>
 		<view class="bg-box">
@@ -58,13 +58,13 @@
 						problemUrl: "https://d-image.i4.cn/i4web/static20212/img/about_contact_icon4.png",
 						problemTitle: '平台客服',
 						explain:"服务时间：周一至周五9：00-18：00",
-						problemContent: '0771-5885606'
+						problemContent: '775842894@qq.com'
 					},
 					{
 						problemUrl: "https://d-image.i4.cn/i4web/static20212/img/about_contact_icon3.png",
 						problemTitle: '投诉建议',
 						explain:"",
-						problemContent: 'aixiaoxin_open@163.com'
+						problemContent: '775842894@qq.com'
 					}
 				]
 			}

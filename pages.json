@@ -301,14 +301,6 @@
 
 		},
 		{
-			"path": "pages/userInfo/about/concealAgreement",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		},
-		{
 			"path": "pages/userInfo/about/childrenAgreement",
 			"style": {
 				"navigationBarTitleText": ""

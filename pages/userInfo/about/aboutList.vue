@@ -4,7 +4,7 @@
 			<view class="cu-item arrow" @tap="toAbout()">
 				<button class="cu-btn content" open-type="contact">
 					<text class="cuIcon-evaluate_fill text-olive"></text>
-					<text class="text-grey">关于爱校信</text>
+					<text class="text-grey">关于HL系统</text>
 				</button>
 			</view>
 			<view class="cu-item arrow" @tap="toService()">
@@ -17,12 +17,6 @@
 				<button class="cu-btn content" open-type="contact">
 					<text class="cuIcon-form text-olive"></text>
 					<text class="text-grey">隐私政策</text>
-				</button>
-			</view>
-			<view class="cu-item arrow" @tap="toChildren()">
-				<button class="cu-btn content" open-type="contact">
-					<text class="cuIcon-form text-olive"></text>
-					<text class="text-grey">儿童信息保护政策</text>
 				</button>
 			</view>
 			<view class="cu-item arrow" @tap="toThirdSDK()">
