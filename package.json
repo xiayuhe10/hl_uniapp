@@ -1,0 +1,18 @@
+{
+    "id": "map-fence",
+    "name": "电子围栏",
+    "displayName": "电子围栏",
+    "version": "1.0.1",
+    "description": "地图选点生成电子围栏",
+    "keywords": [
+        "电子围栏",
+        "围栏",
+        "选点"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

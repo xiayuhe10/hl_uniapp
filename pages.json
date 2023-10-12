@@ -1,0 +1,434 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+			"path": "pages/broadcast/broadcast",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": true,
+					"bounce": "none"
+				}
+			}
+		},{
+			"path": "pages/init",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"bounce": "none"
+			}
+		},  {
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "HL快速开发框架",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue657",
+							"fontSrc": "/static/icon/iconfont.ttf",
+							"fontSize": "22px"
+						}]
+					},
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/state",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/guide/guide",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/index/chat/chat",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "...  ",
+							"fontSrc": "/static/icon/iconfont.ttf",
+							"fontSize": "22px"
+						}]
+					},
+					"bounce": "none"
+				}
+			}
+
+		},
+		{
+			"path": "pages/userInfo/userInfo",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"subNVues": [{
+						"id": "update", // 唯一标识  
+						"type": "popup",
+						"path": "paltform/app-plus/subNVue/subNVue", // 页面路径  
+						"style": {
+							"height": "100%",
+							"width": "100%",
+							"mask": "rgba(0,0,0,0)",
+							"background": "transparent"
+						}
+					}]
+				}
+			}
+		}, {
+			"path": "pages/index/help/help",
+			"style": {
+				"navigationBarTitleText": "产品手册",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		}, {
+			"path": "pages/index/notice/notice-details",
+			"style": {
+				"navigationBarTitleText": "通知详情",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		}, {
+			"path": "pages/index/notice/notice",
+			"style": {
+				"navigationBarTitleText": "通知列表",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		}, {
+			"path": "pages/userInfo/forget/forget",
+			"style": {
+				"navigationBarTitleText": "修改密码",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/index/message/systemMessage",
+			"style": {
+				"navigationBarTitleText": "消息列表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/message/checkMessage",
+			"style": {
+				"navigationBarTitleText": "审批消息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/userInformation/userInformation",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/updatePhoneNumber/updatePhoneNumber",
+			"style": {
+				"navigationBarTitleText": "更换手机号",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/about/about",
+			"style": {
+				"navigationBarTitleText": "关于",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/login/loginAgreement/loginAgreement",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/message/messageInfo",
+			"style": {
+				"navigationBarTitleText": "消息详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/welcome/welcome",
+			"style": {
+				"navigationBarTitleText": "欢迎",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/updatePhoneNumber/checkPhoneNumber",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/complain/complain",
+			"style": {
+				"navigationBarTitleText": "投诉与举报"
+			}
+		},{
+			"path": "pages/userInfo/cancelAccount/cancelAccount",
+			"style": {
+				"navigationBarTitleText": "注销账号",
+				"enablePullDownRefresh": false
+			}
+
+		}
+
+		, {
+			"path": "pages/userInfo/about/aboutList",
+			"style": {
+				"navigationBarTitleText": "关于",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/index/chat/myChats",
+			"style": {
+				"navigationBarTitleText": "聊天",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "详情   ",
+							"fontSrc": "/static/icon/iconfont.ttf",
+							"fontSize": "32rpx"
+						}]
+					},
+					"bounce": "none",
+					"popGesture": "none", //使ios默认手势关闭页面无效
+					"subNVues": [{
+						"id": "video-player", // 视频播放
+						"path": "/components/chat-list/msg-template/video-player",
+						"type": "popup",
+						"style": {
+							"width": "100%",
+							"popGesture": "none"
+						}
+					}]
+				}
+			}
+
+		}, {
+			"path": "pages/userInfo/helpAndFeedback/helpAndFeedback",
+			"style": {
+				"navigationBarTitleText": "帮助与反馈",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/helpAndFeedback/feedback",
+			"style": {
+				"navigationBarTitleText": "反馈",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/helpAndFeedback/feedbackList",
+			"style": {
+				"navigationBarTitleText": "反馈列表",
+				"enablePullDownRefresh": false
+			}
+
+		},{
+			"path": "pages/userInfo/noticeManagement/noticeManagement",
+			"style": {
+				"navigationBarTitleText": "通知管理",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+
+		}, {
+			"path": "pages/userInfo/essentialInformation/essentialInformation",
+			"style": {
+				"navigationBarTitleText": "基本信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/broadcast/broadcastSimple",
+			"style": {
+				"navigationBarTitleText": "应用",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "管理  ",
+							"fontSrc": "/static/icon/iconfont.ttf",
+							"fontSize": "16px"
+						}]
+					},
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/userInfo/about/serviceAgreement",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+
+		},
+		{
+			"path": "pages/userInfo/about/concealAgreement",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/userInfo/about/childrenAgreement",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+
+		},
+		{
+			"path": "pages/userInfo/about/thirdSDK",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+
+		}, {
+			"path": "pages/index/message/systemMessageInfo/systemMessageInfo",
+			"style": {
+				"navigationBarTitleText": "系统通知详情",
+				"enablePullDownRefresh": false
+			}
+
+		},{
+            "path" : "pages/userInfo/about/concealOutline",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐私政策概要"
+          }   
+        },{
+            "path" : "pages/userInfo/changeIdentit/changeIdentit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "切换身份",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+        },{
+            "path" : "pages/userInfo/settings/settings",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/broadcast/check/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/broadcast/check/registerDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "审核详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/broadcast/check/taskOrderDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "任务单详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/broadcast/checkConfig/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "审核配置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+       
+        
+       
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "智慧工地",
+		"navigationBarBackgroundColor": "#EDEDED",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"spacing": "5px",
+		"color": "#B5B5B5",
+		"selectedColor": "#09A5A1",
+		"borderStyle": "#fff",
+		"backgroundColor": "#FFFFFF",
+
+		"list": [{
+				"pagePath": "pages/broadcast/broadcast",
+				"text": "主页",
+				"iconPath": "/static/broadcast/app.png",
+				"selectedIconPath": "/static/broadcast/apped.png"
+			},
+			{
+				"pagePath": "pages/userInfo/userInfo",
+				"text": "我的",
+				"iconPath": "/static/tabBar/userinfo.png",
+				"selectedIconPath": "/static/tabBar/userInfoed.png"
+			}
+		]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

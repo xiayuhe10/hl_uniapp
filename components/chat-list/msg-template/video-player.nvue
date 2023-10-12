@@ -1,0 +1,172 @@
+<template>
+	<view class="video-player">
+		<div class="close" @click="close">
+			<text class="close-text">×</text>
+		</div>
+		<div class="closed" @click="saveVideo">
+			<text class="">💾</text>
+		</div>
+		
+		<!-- <video :src="src" controls class="video-size" id="editVideo" show-play-btn="true" show-fullscreen-btn="false" show-progress="true" :autoplay="true" :muted="false"  ></video> -->
+		<video id="editVideo" :auto-play="true" v-if="src" :controls="true" :enable-play-gesture="true" :autoplay="true"
+			:loop="true" show-mute-btn="true" x-webkit-airplay="true" webkit-playsinline="true" 
+			:auto-pause-if-navigate="true"
+			:auto-pause-if-open-native="true"
+			x5-video-player-type="h5" x5-video-orientation="portraint" preload="auto" class="video" :src="src"
+			:poster="cover"></video>
+
+	</view>
+</template>
+
+<script>
+	import webUrl from '@/common/config.js';
+	export default {
+		data() {
+			return {
+				src: '',
+				cover: ''
+			}
+		},
+		onHide() {
+			uni.createVideoContext('editVideo').pause(); //执行暂停
+			uni.createVideoContext('editVideo').stop(); //执行暂停
+			console.info("关闭页面")
+		},
+		onBackPress(e) {
+		    if (e.from == "backbutton") {
+		         console.log("用户使用了物理返回键");
+		         //在这里操作代码
+		        return true//如果不写就会返回
+		    }
+		},
+		onLoad() {
+			console.info("显示显示")
+			uni.createVideoContext('editVideo').stop(); //执行暂停
+			uni.createVideoContext('editVideo').play(); //执行暂停
+			uni.$on('chat-video-player', (data) => {
+				if (data.content.url == '' && data.content.url) {
+					this.src =webUrl.fileURL+ data.content
+				} else{
+					this.src =webUrl.fileURL+ data.content.url
+				}
+				this.cover = webUrl.fileURL+data.content.url
+			})
+		},
+		onUnload() {
+			uni.$off('chat-video-player')
+			console.info("退出")
+		},
+		methods: {
+			close() {
+				this.src = ''
+				let win = uni.getCurrentSubNVue()
+				win.hide('slide-out-bottom')
+				uni.createVideoContext('editVideo').pause(); //执行暂停
+				uni.createVideoContext('editVideo').stop(); //执行暂停
+
+			},
+			// 保存按钮
+			saveMyVideo() {
+				let that = this
+				// 打开loading等待
+				uni.showLoading({
+					mask: true,
+					title: '加载中'
+				})
+				// 先下载视频
+				uni.downloadFile({
+					url: that.src,
+					success: (res) => {
+						if (res.statusCode === 200) {
+							// 关闭loading
+							uni.hideLoading()
+							// 保存视频到手机相册
+							uni.saveVideoToPhotosAlbum({
+								filePath: res.tempFilePath,
+								success: function() {
+									// 成功提示
+									uni.showToast({
+										title: '保存成功',
+										icon: 'success',    //如果要纯文本，不要icon，将值设为'none'
+										duration: 2000    //持续时间为 2秒
+									})  
+								}
+							})
+						}
+
+					}
+				})
+			},
+			saveVideo() {
+				let that = this
+				uni.showModal({
+					title: '提示',
+					content: '确认要保存该视频吗？',
+					success: function(res) {
+						if (res.confirm) {
+							console.log('点击了确认')
+							that.saveMyVideo()
+						} else {
+							console.log('点击了取消')
+						}
+					}
+				})
+			}
+		}
+	}
+</script>
+<style>
+	.video-player {
+		background-color: #000000;
+		color: #fff;
+		width: 750rpx;
+		height: 1634rpx;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		z-index: -999;
+	}
+
+	.video {
+		width: 750rpx;
+		height: 1634rpx;
+	}
+
+	.close {
+		border-radius: 25px;
+		height: 40px;
+		width: 40px;
+		background-color: rgba(255, 255, 255, .6);
+		position: fixed;
+		top: 35px;
+		right: 30px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.close-text {
+		font-size: 30px;
+		margin-top: -5px;
+		color: #fff;
+
+	}
+
+	.closed {
+		border-radius: 25px;
+		height: 40px;
+		width: 40px;
+		background-color: rgba(255, 255, 255, .6);
+		color: white;
+		position: fixed;
+		top: 35px;
+		left: 35px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.close-textd {
+		font-size: 30px;
+		margin-top: -5px;
+		color: #fff;
+	}
+</style>

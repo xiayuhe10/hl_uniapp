@@ -1,0 +1,76 @@
+<template>
+    <div class="wrapper">
+		<tcx-update-nvue :isShow="show" title="更新提示"  update="更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容更新内容" :themeColors="themeColors" @isShow="isShow"
+			 :downUrl="upContent.versionUrl" :fileSize="upContent.size"></tcx-update-nvue>
+    </div>
+</template>
+
+<script>
+    export default {
+		data() {
+			return {
+				themeColors: 'linear-gradient(to right, rgb(10, 184, 187), rgb(0, 170, 255))',
+				show: false, //是否显示
+				downUrl:'',//下载地址
+				upContent: {},
+				updataInfo:"",
+				upText:""
+			}
+		},
+		created() {
+			const subNVue = uni.getCurrentSubNVue(); 
+			 // console.log(subNVue);
+			
+			// subNVue.addEventListener("hide", function() {  
+			//   console.log("窗口关闭");  
+			//   // do something  
+			// }, false);
+			subNVue.addEventListener("maskClick", function() {
+			console.log("遮罩点击");
+			// subNVue.setStyle({
+			// mask: "none"
+			// });
+			}, false);
+		},
+        methods: {
+			//检查更新
+			checkDate() {
+				uni.showLoading();
+				let appid = plus.runtime.appid
+				plus.runtime.getProperty(appid, async (e) => {
+					let [error, res] = await uni.request({
+						url: weburl.webUrl + "/slmp-server/version/update",
+						data: {
+							name: appid,
+							version: e.version
+						},
+					})
+					// console.log(res)
+					if (!res.data.datas) {
+						uni.showToast({
+							icon: "none",
+							title: "当前已是最新版本"
+						})
+					} else {
+						this.upText = res.data.resp_msg;
+						this.upContent = res.data.datas;
+						console.log(this.upContent)
+						uni.hideLoading();
+						setTimeout(()=>{
+							this.show = true;
+							this.disabled = false;
+						},0)
+					}
+					
+				});
+			}
+        }
+    }
+</script>
+
+<style>
+	.wrapper{
+		/* height: 800px;
+		width:500rpx; */
+	}
+</style>
